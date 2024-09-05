@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .product-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+            margin-bottom: 30px;
+        }
+
+        .product-details {
+            margin-top: 20px;
+        }
+
+        .desc {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-light py-3">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand" href="#">
+                <img src="/imgs/logo.png" alt="EcoShop" class="logo-img" style="width: 10%;">
+                EcoShop
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categorias.html">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/imgs/sabonete.jpg" class="product-img" alt="Eco Bag">
+            </div>
+            <div class="col-md-6">
+                <h2>Sabonete Vegano</h2>
+                <p class="lead">R$ 17,50</p>
+                <p class="desc"> Feito com ingredientes 100% vegetais e livre de crueldade, este sabonete é suave para a pele e o
+                    meio ambiente. Enriquecido com extratos naturais e óleos essenciais, proporciona uma limpeza eficaz
+                    sem agredir a pele, mantendo-a hidratada e fresca. Ideal para todos os tipos de pele, o Sabonete
+                    Vegano combina beleza e responsabilidade ambiental em um único produto.</p>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="Sabonete Vegano Reciclado">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sobre Nós</h5>
+                    <p>Na EcoShop, nosso compromisso é oferecer produtos ecológicos de alta qualidade que ajudam a
+                        reduzir o impacto ambiental.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/categorias.html">Categorias</a></li>
+                        <li><a href="/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociais</h5>
+                    <a href="#" class="mr-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="mr-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="mr-2"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.add-to-cart-btn');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    var productName = button.getAttribute('data-product');
+                    alert('O produto "' + productName + '" foi adicionado ao carrinho!');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

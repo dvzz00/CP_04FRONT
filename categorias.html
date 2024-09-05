@@ -91,7 +91,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Eco Bag</h5>
                                     <p class="card-text">R$ 57,99</p>
-                                    <a href="produto.html" class="btn btn-primary">Adicionar ao Carrinho</a>
+                                    <a href="#" class="btn btn-primary add-to-cart-btn" data-product="Eco Bag">Adicionar ao Carrinho</a>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Sabonete Vegano</h5>
                                     <p class="card-text">R$ 17,50</p>
-                                    <a href="produto.html" class="btn btn-primary">Adicionar ao Carrinho</a>
+                                    <a href="#" class="btn btn-primary add-to-cart-btn" data-product="Sabonete Vegano">Adicionar ao Carrinho</a>
                                 </div>
                             </div>
                         </div>
@@ -111,17 +111,17 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Canudo de Inox</h5>
                                     <p class="card-text">R$ 9,81</p>
-                                    <a href="produto.html" class="btn btn-primary">Adicionar ao Carrinho</a>
+                                    <a href="#" class="btn btn-primary add-to-cart-btn" data-product="Canudo de Inox">Adicionar ao Carrinho</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="card">
-                                <img src="imgs/camiseta.jpg" class="card-img-top" alt="Produto 2">
+                                <img src="imgs/camiseta.jpg" class="card-img-top" alt="Produto 4">
                                 <div class="card-body">
-                                    <h5 class="card-title">Camiseta Organica</h5>
+                                    <h5 class="card-title">Camiseta Orgânica</h5>
                                     <p class="card-text">R$ 64,00</p>
-                                    <a href="produto.html" class="btn btn-primary">Adicionar ao Carrinho</a>
+                                    <a href="#" class="btn btn-primary add-to-cart-btn" data-product="Camiseta Orgânica">Adicionar ao Carrinho</a>
                                 </div>
                             </div>
                         </div>
@@ -160,6 +160,19 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('.add-to-cart-btn');
+
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var productName = button.getAttribute('data-product');
+                    alert('O produto "' + productName + '" foi adicionado ao carrinho!');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
